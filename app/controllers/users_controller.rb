@@ -1,15 +1,14 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: %i[index]
+  before_action :set_current_user, except: %i[show ]
 
-  # GET /users/1 or /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -24,8 +23,8 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find(params[:id])
+  def set_current_user
+    @user = current_user
   end
 
   def user_params
