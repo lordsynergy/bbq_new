@@ -1,17 +1,30 @@
-<%= form_with(model: event) do |form| %>
-  <% if event.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<%= form_for @event, data: {turbo: false} do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
-      <ul>
-        <% event.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :title, autofocus: true, autocomplete: "title",
+                     placeholder: t('activerecord.attributes.event.title'), id: "floatingInput", class: "form-control" %>
+    <%= f.label :title, for: "floatingInput" %>
+  </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :address, autofocus: true, autocomplete: "address",
+                     placeholder: t('activerecord.attributes.event.address'), id: "floatingInput", class: "form-control" %>
+    <%= f.label :address, for: "floatingInput" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :datetime %>
+    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= f.text_area :description, autofocus: true, autocomplete: "description",
+                    placeholder: t('views.events.leave_a_description'), id: "floatingTextarea2", class: "form-control" %>
+    <%= f.label :description, for: "floatingTextarea2" %>
+  </div>
+
+  <div class="actions mb-3">
+    <%= f.submit 'Сохранить', class: 'btn btn-info' %> или <%= link_to 'вернуться', :back %>
   </div>
 <% end %>

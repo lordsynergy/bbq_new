@@ -1,0 +1,13 @@
+<% errors = model.errors %>
+<% if errors.any? %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong><%= t('app.errors', count: errors.count) %></strong>
+
+    <ul>
+      <% errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>

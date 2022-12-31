@@ -1,17 +1,20 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for @user, data: {turbo: false}, html: {multipart: true} do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name",
+                     placeholder: t('views.devise.name'), id: "floatingInput", class: "form-control" %>
+    <%= f.label :name, for: "floatingInput" %>
   </div>
+
+  <div class="form-floating mb-3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                      placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
+    <%= f.label :email, for: "floatingInput" %>
+  </div>
+
+  <div class="actions mb-3">
+    <%= f.submit 'Сохранить', class: 'btn btn-info' %> или <%= link_to 'вернуться', :back %>
+  </div>
+
 <% end %>

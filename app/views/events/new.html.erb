@@ -1,9 +1,9 @@
-<h1>New event</h1>
+<h3 class='text-center mb-3'><%= t('views.events.new_event')%></h3>
 
-<%= render "form", event: @event %>
+<div class="row justify-content-center">
+  <div class="col-md-6 buffer-top">
 
-<br>
+    <%= render 'form' %>
 
-<div>
-  <%= link_to "Back to events", events_path %>
+  </div>
 </div>
