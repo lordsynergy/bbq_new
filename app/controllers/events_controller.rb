@@ -7,7 +7,6 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  # GET /events/1 or /events/1.json
   def show
   end
 
@@ -18,22 +17,16 @@ class EventsController < ApplicationController
   def edit
   end
 
-  # POST /events or /events.json
   def create
     @event = current_user.events.build(event_params)
 
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to event_url(@event), I18n.t('controllers.events.created') }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      redirect_to @event, notice: I18n.t('controllers.events.created')
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /events/1 or /events/1.json
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -46,12 +39,11 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /events/1 or /events/1.json
   def destroy
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
+      format.html { redirect_to events_url, notice: I18n.t('controllers.events.destroyed') }
       format.json { head :no_content }
     end
   end
