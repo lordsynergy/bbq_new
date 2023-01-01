@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
-  <h3 class='text-center mb-5'>Редактирование профиля</h3>
+  <h3 class='text-center mb-5'><%= t('views.users.edit_title') %></h3>
   <div class="col-md-6">
 
     <%= render 'form' %>
-    <%= link_to 'Сменить пароль', edit_user_registration_path, class: 'btn btn-warning mb-3' %>
+    <%= link_to t('views.users.change_password'), edit_user_registration_path, class: 'btn btn-warning mb-3' %>
 
   </div>
 </div>

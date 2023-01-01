@@ -1,4 +1,4 @@
-<h2 class="text-center mb-3">Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="text-center mb-3"><%= t('views.devise.edit_title') %></h2>
 
 <div class="row justify-content-center">
   <div class='col-md-6'>
@@ -19,7 +19,7 @@
         <%= f.password_field :password, autocomplete: "new-password",
                              class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
         <% if @minimum_password_length %>
-          <em><%= @minimum_password_length %> characters minimum</em>
+          <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
         <% end %>
         <%= f.label :password, for: "floatingPassword" %>
       </div>
@@ -34,22 +34,22 @@
         <%= f.password_field :current_password, autocomplete: "current-password",
                              class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
         <%= f.label :current_password, for: "floatingPassword" %>
-        <i>(we need your current password to confirm your changes)</i><br />
+        <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
       </div>
 
       <div class="actions">
-        <%= f.submit "Update" , class: 'btn btn-info mb-3'%>
+        <%= f.submit t('.update'), class: 'btn btn-info mb-3'%>
       </div>
 <% end %>
-    <h3>Cancel my account</h3>
+    <h3><%= t('.cancel_my_account') %></h3>
 
     <div class="actions mb-3">
-      <%= 'Unhappy?' %><%= button_to "Cancel my account", registration_path(resource_name),
-                                     method: :delete, class: 'btn btn-danger mb-3 mt-1', form: {data: {turbo_confirm: "Are you sure?"}} %>
+      <%= t('.unhappy') %><%= button_to t('.cancel_my_account'), registration_path(resource_name),
+                                     method: :delete, class: 'btn btn-danger mb-3 mt-1', form: {data: {turbo_confirm: t('.are_you_sure')}} %>
     </div>
 
     <div class="actions mb-3">
-      <%= link_to "Back", :back %>
+      <%= link_to link_to t('devise.shared.links.back'), :back %>
     </div>
   </div>
 </div>

@@ -20,11 +20,11 @@
 
   <div class="form-floating mb-3">
     <%= f.text_area :description, autofocus: true, autocomplete: "description",
-                    placeholder: t('views.events.leave_a_description'), id: "floatingTextarea2", class: "form-control" %>
+                    placeholder: t('views.events.description'), id: "floatingTextarea2", class: "form-control" %>
     <%= f.label :description, for: "floatingTextarea2" %>
   </div>
 
   <div class="actions mb-3">
-    <%= f.submit 'Сохранить', class: 'btn btn-info' %> или <%= link_to 'вернуться', :back %>
+    <%= f.submit t('views.events.save'), class: 'btn btn-info' %> или <%= link_to t('views.events.back'), :back %>
   </div>
 <% end %>

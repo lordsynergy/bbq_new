@@ -13,24 +13,24 @@
   <body>
   <nav class="navbar navbar-expand-lg bg-light mb-5">
     <div class="container">
-      <%= link_to 'BBQ', root_path, class: 'navbar-brand' %>
+      <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
       <div class="collapse navbar-collapse" id="navbarNav">
         <% if user_signed_in? %>
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <%= link_to 'Профиль', current_user, class: 'nav-link active', data: { turbo: false }%>
+              <%= link_to t('app.profile'), current_user, class: 'nav-link active', data: { turbo: false }%>
             </li>
             <li class="nav-item">
-              <%= link_to 'Выйти', destroy_user_session_path, class: 'nav-link active', data: { turbo_method: :delete } %>
+              <%= link_to t('app.exit'), destroy_user_session_path, class: 'nav-link active', data: { turbo_method: :delete } %>
             </li>
           </ul>
         <% else %>
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <%= link_to 'Вход', new_user_session_path, class: 'nav-link active' %>
+              <%= link_to t('app.sign_in'), new_user_session_path, class: 'nav-link active' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link active' %>
+              <%= link_to t('app.sign_up'), new_user_registration_path, class: 'nav-link active' %>
             </li>
           </ul>
         <% end %>
@@ -48,7 +48,7 @@
       <%= yield %>
     </div>
     <footer class="mt-5">
-      <p>&copy; Company 2022</p>
+      <p>&copy; <%= t('app.company')%></p>
     </footer>
   </div>
   </body>

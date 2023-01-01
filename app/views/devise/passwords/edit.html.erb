@@ -8,17 +8,17 @@
 
       <div class="form-floating mb-3">
         <%= f.password_field :password, autocomplete: "new-password",
-                             class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
+                             class: "form-control", id: "floatingPassword", placeholder: 'password' %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
-        <%= f.label :password, t('.new_password'), for: "floatingPassword" %>
+        <%= f.label :password, 'new password', for: "floatingPassword" %>
       </div>
 
       <div class="form-floating mb-3">
         <%= f.password_field :password_confirmation, autocomplete: "new-password",
-                             class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
-        <%= f.label :password_confirmation, t('.confirm_new_password'), for: "floatingPassword" %>
+                             class: "form-control", id: "floatingPassword", placeholder: 'password' %>
+        <%= f.label :password_confirmation, 'confirm new password', for: "floatingPassword" %>
       </div>
 
       <div class="actions">
