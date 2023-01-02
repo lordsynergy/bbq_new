@@ -1,0 +1,21 @@
+<div class="p-3 border bg-light mb-2">
+  <p><%= comment.body %></p>
+  <p class="d-inline">
+    <span>
+      <% if comment.user.present? %>
+        <%= render partial: 'users/user', object: comment.user %>
+      <% else %>
+        <em><strong><%= comment.user_name %></strong></em>
+      <% end %>
+    </span>
+    <em><%= l comment.created_at, format: :short %></em>
+    <% if current_user_can_edit?(comment) %>
+      <%= button_to fa_icon('trash-fill'), event_comment_path(comment.event, comment),
+                    form: {data: {turbo_confirm: t('views.comments.destroy_confirm')}},
+                    method: :delete,
+                    class: 'btn',
+                    form_class: 'd-inline'
+      %>
+    <% end %>
+  </p>
+</div>
