@@ -23,6 +23,10 @@ ru:
       destroyed: 'Вы удалили мероприятие'
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
 
   app:
     name: 'ШашлbIkи'
@@ -63,3 +67,6 @@ ru:
       edit_title: 'Редактирование профиля'
       organization: 'Организовал:'
       user_not_organize_anything: 'Пользователь пока не организовал ни одного события'
+
+    comments:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
