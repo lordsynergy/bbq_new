@@ -1,19 +1,19 @@
-<%= form_for [@event, subscription] do |f| %>
+<%= form_for [@event, subscription], data: {turbo: false} do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
-
   <% unless user_signed_in? %>
-    <div class="form-group">
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+    <div class="form-floating mb-2">
+      <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name",
+                       placeholder: t('views.subscriptions.user_name'), id: "floatingInput", class: "form-control" %>
+      <%= f.label :user_name, t('views.subscriptions.user_name'), for: "floatingInput" %>
     </div>
-
-    <div class="form-group">
-      <%= f.label :user_email %>
-      <%= f.text_field :user_email, class: 'form-control' %>
+    <div class="form-floating mb-2">
+      <%= f.text_field :user_email, autofocus: true, autocomplete: "user_email",
+                       placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
+      <%= f.label :user_email, t('views.subscriptions.user_email'), for: "floatingInput" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit 'Подписаться', class: 'btn btn-primary' %>
+  <div class="actions mb-3 mt-3">
+    <%= f.submit t('views.subscriptions.submit'), class: 'btn btn-info' %>
   </div>
 <% end %>

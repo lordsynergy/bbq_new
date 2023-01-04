@@ -62,6 +62,10 @@ ru:
       edit_title: 'Редактирование события'
       delete: 'Удалить'
       delete_event: 'Удалить событие'
+      organized: 'Организовал:'
+      who_will_go: 'Кто пойдет:'
+      i_will_go: 'Я пойду:'
+      empty: 'Пока никого...'
 
     users:
       save: 'Сохранить'
@@ -80,3 +84,6 @@ ru:
 
     subscriptions:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      user_name: 'Имя пользователя'
+      user_email: 'Email пользователя'
+      submit: 'Подписаться'
