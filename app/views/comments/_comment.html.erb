@@ -1,6 +1,6 @@
-<div class="buffer-bottom">
+<div class="border bg-light p-2 mb-2">
   <p><%= comment.body %></p>
-  <p>
+  <p class="d-inline">
     <span>
       <% if comment.user.present? %>
         <%= render partial: 'users/user', object: comment.user %>
@@ -9,9 +9,12 @@
       <% end %>
     </span>
     <em><%= l comment.created_at, format: :short %></em>
+  </p>
+  <p class="d-inline">
     <% if current_user_can_edit?(comment) %>
       <%= button_to fa_icon('trash'), event_comment_path(comment.event, comment),
-              method: :delete, data: {confirm: t('views.comments.destroy_confirm')}
+                    form: {data: {turbo_confirm: t('views.comments.destroy_confirm')}},
+                    method: :delete, class: 'btn', form_class: 'd-inline float-end'
       %>
     <% end %>
   </p>

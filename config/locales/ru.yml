@@ -74,6 +74,9 @@ ru:
 
     comments:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      body: 'Текст комментария'
+      user_name: 'Имя пользователя'
+      submit: 'Отправить'
 
     subscriptions:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'

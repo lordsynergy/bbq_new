@@ -1,19 +1,21 @@
-<%= form_for [@event, comment] do |f| %>
+<%= form_for [@event, comment], data: {turbo: false} do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
+  <div class="form-floating mb-3">
+    <%= f.text_area :body, autofocus: true, placeholder: t('views.comments.body'),
+                    autocomplete: "body", id: "floatingTextarea2", class: "form-control" %>
+    <%= f.label :body, t('views.comments.body'), for: "floatingTextarea2" %>
   </div>
 
   <% unless user_signed_in? %>
-    <div class="form-group">
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+    <div class="form-floating mb-3">
+      <%= f.text_field :user_name, autofocus: true, placeholder: t('views.comments.user_name'),
+                       autocomplete: "user_name", id: "floatingInput", class: "form-control" %>
+      <%= f.label :user_name, t('views.comments.user_name'), for: "floatingInput" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+  <div class="actions mb-3">
+    <%= f.submit t('views.comments.submit'), class: 'btn btn-info' %>
   </div>
 <% end %>
