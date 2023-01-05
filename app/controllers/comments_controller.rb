@@ -1,22 +1,22 @@
 class CommentsController < ApplicationController
-  before_action :set_event, only: %i[create destroy]
+  before_action :set_event, only: %i[index create destroy]
   before_action :set_comment, only: %i[destroy]
 
-  # POST /comments or /comments.json
+  def index
+    redirect_to @event
+  end
+
   def create
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
     if @new_comment.save
-      # если сохранился успешно, редирект на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
-      # если ошибки — рендерим здесь же шаблон события
       render 'events/show', alert: I18n.t('controllers.comments.error')
     end
   end
 
-  # DELETE /comments/1 or /comments/1.json
   def destroy
     message = {notice: I18n.t('controllers.comments.destroyed')}
 

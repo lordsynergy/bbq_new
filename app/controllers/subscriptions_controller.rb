@@ -1,6 +1,10 @@
 class SubscriptionsController < ApplicationController
-  before_action :set_event, only: [:create, :destroy]
-  before_action :set_subscription, only: [:destroy]
+  before_action :set_event, only: %i[index create destroy]
+  before_action :set_subscription, only: %i[destroy]
+
+  def index
+    redirect_to @event
+  end
 
   def create
     # Болванка для новой подписки

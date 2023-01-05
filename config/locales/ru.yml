@@ -4,6 +4,9 @@ ru:
       user: 'Пользователь'
       event: 'Событие'
 
+      errors:
+        email_exist: 'уже занят'
+
     attributes:
       user:
         email: 'Email'

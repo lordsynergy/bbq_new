@@ -9,8 +9,9 @@ class Subscription < ApplicationRecord
 
 
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
-
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
+
+  validate :check_user_email, unless: -> { user.present? }
 
   def user_name
     if user.present?
@@ -25,6 +26,14 @@ class Subscription < ApplicationRecord
       user.email
     else
       super
+    end
+  end
+
+  private
+
+  def check_user_email
+    if User.exists?(email: user_email)
+      errors.add(:user_email, I18n.t('activerecord.models.errors.email_exist'))
     end
   end
 end
