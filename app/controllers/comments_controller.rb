@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
-  before_action :set_event, only: %i[create destroy]
+  before_action :set_event, only: %i[index create destroy]
   before_action :set_comment, only: %i[destroy]
+
+  def index
+    redirect_to @event
+  end
 
   def create
     @new_comment = @event.comments.build(comment_params)

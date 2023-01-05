@@ -4,6 +4,9 @@ ru:
       user: 'Пользователь'
       event: 'Событие'
 
+      errors:
+        email_exist: 'уже занят'
+
     attributes:
       user:
         email: 'Email'
@@ -27,6 +30,10 @@ ru:
       destroyed: 'Комментарий удален'
       created: 'Ваш комментарий добавлен'
       error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
 
   app:
     name: 'ШашлbIkи'
@@ -58,6 +65,10 @@ ru:
       edit_title: 'Редактирование события'
       delete: 'Удалить'
       delete_event: 'Удалить событие'
+      organized: 'Организовал:'
+      who_will_go: 'Кто пойдет:'
+      i_will_go: 'Я пойду:'
+      empty: 'Пока никого...'
 
     users:
       save: 'Сохранить'
@@ -69,4 +80,13 @@ ru:
       user_not_organize_anything: 'Пользователь пока не организовал ни одного события'
 
     comments:
-      destroy_confirm: 'Точно удалить этот комментарий?'
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      body: 'Текст комментария'
+      user_name: 'Имя пользователя'
+      submit: 'Отправить'
+
+    subscriptions:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      user_name: 'Имя пользователя'
+      user_email: 'Email пользователя'
+      submit: 'Подписаться'

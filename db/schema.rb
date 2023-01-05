@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_02_093627) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_03_111955) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.string "user_name"
-    t.integer "event_id", null: false
-    t.integer "user_id", null: false
+    t.integer "event_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_comments_on_event_id"
@@ -31,6 +31,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_093627) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "user_name"
+    t.string "user_email"
+    t.integer "event_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_subscriptions_on_event_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_093627) do
   add_foreign_key "comments", "events"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "subscriptions", "events"
+  add_foreign_key "subscriptions", "users"
 end
