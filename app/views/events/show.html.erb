@@ -47,10 +47,12 @@
           <% else %>
             <p class="mb-3 mt-3"><%= t('views.events.empty') %></p>
           <% end %>
-          <div class="card-header"><%= t('views.events.i_will_go') %></div>
-          <div class="m-2">
-            <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
-          </div>
+          <% unless current_user == @event.user || @event.subscribers.include?(current_user) %>
+            <div class="card-header"><%= t('views.events.i_will_go') %></div>
+            <div class="m-2">
+              <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
