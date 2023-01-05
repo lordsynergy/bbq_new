@@ -10,11 +10,7 @@ gem "devise-i18n"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "jsbundling-rails"
-
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
@@ -47,6 +43,10 @@ gem "bootsnap", require: false
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "sqlite3", "~> 1.4"
+end
+
+group :production do
+  gem "pg"
 end
 
 group :development do
