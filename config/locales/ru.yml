@@ -53,6 +53,7 @@ ru:
     devise:
       edit_title: 'Редактирование профиля'
       password: 'Пароль'
+      password_confirm: 'Подтверждение пароля'
       name: 'Имя'
       email: 'Email'
 
