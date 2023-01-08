@@ -34,6 +34,13 @@
   margin-bottom: .3em;
 }
 
+.thumbnail p {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: .3em;
+}
+
 .thumbnail-inner {
   padding: 20px 4px 4px;
 }

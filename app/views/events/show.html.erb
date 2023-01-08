@@ -6,10 +6,10 @@
       <div class="event-info-inner row">
         <div class="col-md-6">
           <div class="event-description m-3">
-            <h1><%= @event.title %></h1>
+            <h1><%= strip_tags(@event.title) %></h1>
             <h3><%= l @event.datetime, format: :short %></h3>
-            <h3><small><%= link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
-            <p><%= @event.description %></p>
+            <h3><small><%= link_to strip_tags(@event.address), "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+            <p><%= simple_format h(@event.description) %></p>
 
             <% if current_user_can_edit?(@event) %>
               <div class="buffer-both">

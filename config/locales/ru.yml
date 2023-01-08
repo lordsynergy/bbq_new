@@ -6,6 +6,7 @@ ru:
 
       errors:
         email_exist: 'уже занят'
+        event_author: 'не может подписаться на собственное событие'
 
     attributes:
       user:
