@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
 
+gem "carrierwave"
+gem "rmagick"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 gem "rails-i18n"
 gem "devise"
