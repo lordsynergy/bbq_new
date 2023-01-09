@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_scope :user do
     # Redirests signing out users back to sign-in
     get 'users', to: 'devise/sessions#new'
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :comments, only: %i[index create destroy]
     resources :subscriptions, only: %i[index create destroy]
+    resources :photos, only: %i[create destroy]
   end
 
   resources :users, only: %i[show edit update]
