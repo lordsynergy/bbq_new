@@ -14,7 +14,7 @@
 /* Avatars for users & events */
 .img-icon, .img-icon-small {
   height: 50px;
-  width: auto;
+  width: 50px;
   border-radius: 50%;
 }
 

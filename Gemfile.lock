@@ -230,6 +230,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
   pg
