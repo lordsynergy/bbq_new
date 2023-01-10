@@ -25,24 +25,26 @@
   </div>
 
   <div class="row">
-    <div class="event-photos">
-      <%# Выводим все фотографии события %>
-      <div class="event-photos-gallery">
-        <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
-      </div>
-
-      <%# Рисуем форму для добавления новой фотографии %>
-      <div class="event-photo-form">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-      </div>
-    </div>
-
     <div class="col-md-9 d-flex flex-column">
-      <div class="p-2 event-comments buffer-top">
-        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
-      </div>
-      <div class="p-2 buffer-both">
-        <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+      <div class="event-photos mb-3">
+        <div class="d-flex flex-column">
+          <div class="p-2">
+            <div class="р-2 text-center d-flex flex-wrap">
+              <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+            </div>
+          </div>
+
+          <div class="p-2 event-photo-form">
+            <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+          </div>
+        </div>
+
+        <div class="p-2 event-comments buffer-top">
+          <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+        </div>
+        <div class="p-2 buffer-both">
+          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+        </div>
       </div>
     </div>
 

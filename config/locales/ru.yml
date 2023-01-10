@@ -22,7 +22,13 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
       photo:
-        photo: 'Фотография'
+        photo: 'Изображение'
+
+  errors:
+    messages:
+      file_size_is_less_than_or_equal_to: ' - размер файла не должен превышать %{count}'
+      allowed_file_content_types: 'может быть формата: %{types}'
+      excluded_file_content_types: 'не может быть %{types}'
 
   controllers:
     events:
@@ -100,3 +106,8 @@ ru:
       user_name: 'Имя пользователя'
       user_email: 'Email пользователя'
       submit: 'Подписаться'
+
+    photos:
+      download: 'Загрузить'
+      downloader: 'Добавил:'
+      add_photo: 'Добавить изображение:'

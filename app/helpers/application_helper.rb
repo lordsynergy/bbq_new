@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def user_avatar(user)
-    if user.avatar.attached?
+    if user.avatar.attached? && user.avatar.variable?
       user.avatar.variant(:thumb_big)
     else
       asset_path('user.png')
@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def user_avatar_thumb(user)
-    if user.avatar.attached?
+    if user.avatar.attached? && user.avatar.variable?
       user.avatar.variant(:thumb)
     else
       asset_path('user.png')

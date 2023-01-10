@@ -7,12 +7,15 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 35}
 
-  after_commit :link_subscriptions, on: :create
-
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize_to_limit: [100, 100]
-    attachable.variant :thumb_big, resize_to_limit: [400, 400]
+    attachable.variant :thumb_big, resize_to_limit: [350, 350]
   end
+
+  validates :avatar, file_size: { less_than_or_equal_to: 2.megabytes },
+            file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] }
+
+  after_commit :link_subscriptions, on: :create
 
   private
 
