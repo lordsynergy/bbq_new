@@ -1,0 +1,16 @@
+<h1><%= t('.title') %></h1>
+<p><%= @comment.body %></p>
+<p><%= t('.author') %>: <strong><%= @comment.user_name %></strong></p>
+
+<hr/>
+
+<%= t('.event') %>
+<h3>
+  <strong><%= link_to @comment.event.title, event_url(@comment.event) %></strong>
+</h3>
+
+<%= t('.datetime') %>
+<h4><%= l(@comment.event.datetime, format: :short) %></h4>
+
+<%= t('.owner') %>
+<h4><%= @comment.event.user.name %></h4>

@@ -111,3 +111,30 @@ ru:
       download: 'Загрузить'
       downloader: 'Добавил:'
       add_photo: 'Добавить изображение:'
+
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+      subject: 'Новый комментарий @ %{event_title}'
+
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+      subject: 'Новая подписка на %{event_title}'
+
+    photo:
+      title: 'Новая фотография'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Время проведения'
+      owner: 'Организатор'
+      subject: 'Новое фото в %{event_title}'

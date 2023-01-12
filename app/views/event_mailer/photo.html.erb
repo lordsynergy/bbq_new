@@ -1,0 +1,18 @@
+<h1><%= t('.title') %></h1>
+<p><%= link_to image_tag(@photo.photo.variant(:thumb).processed.url), @photo.photo.url %></p>
+<p><%= t('.author') %>:
+  <strong><%= @photo.user.name %></strong>
+</p>
+
+<hr/>
+
+<%= t('.event') %>
+<h3>
+  <strong><%= link_to @photo.event.title, event_url(@photo.event) %></strong>
+</h3>
+
+<%= t('.datetime') %>
+<h4><%= l(@photo.event.datetime, format: :short) %></h4>
+
+<%= t('.owner') %>
+<h4><%= @photo.event.user.name %></h4>
