@@ -65,7 +65,16 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'event.goodprogramming.ru' }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :mailjet
+  # config.action_mailer.delivery_method = :mailjet
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mail.ru',
+    port: '465',
+    tls: true,
+    user_name: ENV['MAIL_SENDER'],
+    password: ENV['MAIL_PASSWORD'],
+    authentication: 'plain'
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
