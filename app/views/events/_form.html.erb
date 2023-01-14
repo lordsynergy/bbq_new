@@ -24,6 +24,12 @@
     <%= f.label :description, for: "floatingTextarea2" %>
   </div>
 
+  <div class="form-floating mb-3">
+    <%= f.text_field :pincode, autofocus: true, autocomplete: "pincode",
+                     placeholder: t('views.events.input_pincode'), id: "floatingInput", class: "form-control" %>
+    <%= f.label :pincode, for: "floatingInput" %>
+  </div>
+
   <div class="actions mb-3">
     <%= f.submit t('views.events.save'), class: 'btn btn-info' %> или <%= link_to t('views.events.back'), :back %>
   </div>
