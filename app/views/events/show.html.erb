@@ -4,7 +4,7 @@
       <%= content_tag 'div', '', class: 'event-background', style: "background-image: url(#{event_photo(@event)})" %>
 
       <div class="event-info-inner row">
-        <div class="col-md-6">
+        <div class="col-md-9">
           <div class="event-description m-3">
             <h1><%= strip_tags(@event.title) %></h1>
             <h3><%= l @event.datetime, format: :short %></h3>
@@ -18,6 +18,12 @@
                               title: t('views.events.delete_event'), form: {data: {turbo_confirm: t('app.are_you_sure')}} %>
               </div>
             <% end %>
+          </div>
+        </div>
+        <div class="col-md-3 p-2">
+          <div id="map"
+            data-address="<%= @event.address %>"
+            style="width: 100%; height: 300px">
           </div>
         </div>
       </div>
