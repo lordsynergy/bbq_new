@@ -48,6 +48,7 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "sqlite3", "~> 1.4"
+  gem "letter_opener", group: :development
 end
 
 group :production do
