@@ -40,16 +40,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.mail.ru',
-    port: '465',
-    tls: true,
-    user_name: ENV['MAIL_SENDER'],
-    password: ENV['MAIL_PASSWORD'],
-    authentication: 'plain'
-  }
+  config.action_mailer.delivery_method = :mailjet
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
