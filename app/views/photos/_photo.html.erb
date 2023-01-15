@@ -1,6 +1,7 @@
 <div class="event-photo col-md-2 mb-3 ps-1">
   <div class="card">
-    <a data-fslightbox="gallery" class="ripple" href="<%= photo.photo.url %>">
+    <a data-toggle="lightbox" data-gallery="example-gallery" data-type="image"
+       href="<%= photo.photo.url %>">
       <%= image_tag(photo.photo.variant(:thumb), class: 'card-img-top') %>
     </a>
     <p class="card-subtitle mb-1 mt-1"><%= t('views.photos.downloader') %></p>

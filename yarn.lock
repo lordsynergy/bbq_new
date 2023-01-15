@@ -300,7 +300,7 @@
   "resolved" "https://registry.npmjs.org/bootstrap-icons/-/bootstrap-icons-1.10.3.tgz"
   "version" "1.10.3"
 
-"bootstrap@^5.2.3":
+"bootstrap@^5.0.0", "bootstrap@^5.2.3":
   "integrity" "sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ=="
   "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.2.3.tgz"
   "version" "5.2.3"
@@ -321,6 +321,11 @@
     "electron-to-chromium" "^1.4.251"
     "node-releases" "^2.0.6"
     "update-browserslist-db" "^1.0.9"
+
+"bs5-lightbox@^1.8.2":
+  "integrity" "sha512-hN3uj34cDbSB5Pz7gftalG18csC9L/hHG9x0sqkcG5XoWA5xrxihpTT3vm5Fh4PfcCY8sygPVQZ1/rDiFNcSoA=="
+  "resolved" "https://registry.npmjs.org/bs5-lightbox/-/bs5-lightbox-1.8.2.tgz"
+  "version" "1.8.2"
 
 "buffer-from@^1.0.0":
   "integrity" "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="
