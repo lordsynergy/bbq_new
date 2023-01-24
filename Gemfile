@@ -42,7 +42,6 @@ end
 
 group :development do
   gem 'capistrano', '~> 3.8'
-  gem 'capistrano-postgresql'
   gem 'capistrano-rails', '~> 1.6'
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.2'
