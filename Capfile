@@ -38,6 +38,7 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/passenger'
+require 'capistrano/postgresql'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '3.0.0'

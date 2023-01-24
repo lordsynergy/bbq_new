@@ -100,6 +100,9 @@ GEM
       capistrano (~> 3.1)
     capistrano-passenger (0.2.1)
       capistrano (~> 3.0)
+    capistrano-postgresql (6.2.0)
+      capistrano (>= 3.0)
+      sshkit (>= 1.17.0)
     capistrano-rails (1.6.2)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
@@ -301,6 +304,7 @@ DEPENDENCIES
   capistrano (~> 3.8)
   capistrano-bundler (~> 2.1)
   capistrano-passenger (~> 0.2)
+  capistrano-postgresql
   capistrano-rails (~> 1.6)
   capistrano-rbenv (~> 2.2)
   carrierwave
