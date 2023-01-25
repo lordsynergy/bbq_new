@@ -15,6 +15,7 @@ gem "devise"
 gem "devise-i18n"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
+gem "pundit"
 gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
@@ -34,6 +35,7 @@ gem "sqlite3", "~> 1.4"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "letter_opener", group: :development
+  gem "rspec-rails"
 end
 
 group :production do

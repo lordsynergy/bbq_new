@@ -11,7 +11,7 @@
     <em><%= l comment.created_at, format: :short %></em>
   </p>
   <p class="d-inline">
-    <% if current_user_can_edit?(comment) %>
+    <% if policy(comment).destroy? %>
       <%= button_to fa_icon('trash'), event_comment_path(comment.event, comment),
                     form: {data: {turbo_confirm: t('views.comments.destroy_confirm')}},
                     method: :delete, class: 'btn', form_class: 'd-inline float-end'

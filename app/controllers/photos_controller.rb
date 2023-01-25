@@ -16,15 +16,11 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    message = { notice: I18n.t('controllers.photos.destroyed') }
+    authorize @photo
 
-    if current_user_can_edit?(@photo)
-      @photo.destroy
-    else
-      message = { alert: I18n.t('controllers.photos.error') }
-    end
+    @photo.destroy!
 
-    redirect_to @event, message
+    redirect_to @event, notice: I18n.t('controllers.photos.destroyed')
   end
 
   private
