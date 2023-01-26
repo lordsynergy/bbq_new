@@ -4,6 +4,9 @@ class PhotosController < ApplicationController
 
   def create
     @new_photo = @event.photos.build(photo_params)
+
+    authorize @new_photo
+
     @new_photo.user = current_user
 
     if @new_photo.save

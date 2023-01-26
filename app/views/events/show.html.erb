@@ -40,9 +40,11 @@
             </div>
           </div>
 
-          <div class="p-2 event-photo-form">
-            <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-          </div>
+          <% if policy(Photo).create? %>
+            <div class="p-2 event-photo-form">
+              <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+            </div>
+          <% end %>
         </div>
 
         <div class="p-2 event-comments buffer-top">

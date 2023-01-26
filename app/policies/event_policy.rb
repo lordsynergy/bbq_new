@@ -16,7 +16,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def edit?
-    update?
+    current_user_can_edit?
   end
 
   private

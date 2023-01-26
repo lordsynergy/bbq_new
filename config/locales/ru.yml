@@ -24,6 +24,9 @@ ru:
       photo:
         photo: 'Изображение'
 
+  pundit:
+    not_authorized: 'Вы не можете это сделать!'
+
   errors:
     messages:
       file_size_is_less_than_or_equal_to: ' - размер файла не должен превышать %{count}'
