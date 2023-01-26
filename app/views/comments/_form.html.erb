@@ -2,14 +2,14 @@
   <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
   <div class="form-floating mb-3">
-    <%= f.text_area :body, autofocus: true, placeholder: t('views.comments.body'),
+    <%= f.text_area :body, placeholder: t('views.comments.body'),
                     autocomplete: "body", id: "floatingTextarea2", class: "form-control" %>
     <%= f.label :body, t('views.comments.body'), for: "floatingTextarea2" %>
   </div>
 
   <% unless user_signed_in? %>
     <div class="form-floating mb-3">
-      <%= f.text_field :user_name, autofocus: true, placeholder: t('views.comments.user_name'),
+      <%= f.text_field :user_name, maxlength: 50, placeholder: t('views.comments.user_name'),
                        autocomplete: "user_name", id: "floatingInput", class: "form-control" %>
       <%= f.label :user_name, t('views.comments.user_name'), for: "floatingInput" %>
     </div>

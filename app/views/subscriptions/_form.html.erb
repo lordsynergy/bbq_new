@@ -2,12 +2,12 @@
   <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
   <% unless user_signed_in? %>
     <div class="form-floating mb-2">
-      <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name",
+      <%= f.text_field :user_name, maxlength: 30, autocomplete: "user_name",
                        placeholder: t('views.subscriptions.user_name'), id: "floatingInput", class: "form-control" %>
       <%= f.label :user_name, t('views.subscriptions.user_name'), for: "floatingInput" %>
     </div>
     <div class="form-floating mb-2">
-      <%= f.text_field :user_email, autofocus: true, autocomplete: "user_email",
+      <%= f.text_field :user_email, maxlength: 50, autocomplete: "user_email",
                        placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
       <%= f.label :user_email, t('views.subscriptions.user_email'), for: "floatingInput" %>
     </div>

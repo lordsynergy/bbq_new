@@ -3,7 +3,7 @@
     <% if subscription.user.present? %>
       <%= render partial: 'users/user', object: subscription.user %>
     <% else %>
-      <em><%= subscription.user_name %></em>
+      <em class="word_wrap"><%= subscription.user_name %></em>
     <% end %>
     <% if policy(subscription).destroy? %>
       <%= button_to fa_icon('x-circle'), event_subscription_path(subscription.event, subscription),
