@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[github vkontakte]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -16,6 +17,18 @@ class User < ApplicationRecord
             file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] }
 
   after_commit :link_subscriptions, on: :create
+
+  def self.find_service_oauth(access_token)
+    user = User.find_by(email: access_token.info.email)
+
+    return user if user.present?
+
+    User.where(provider: access_token.provider, uid: access_token.uid).first_or_create! do |new_user|
+      new_user.name = access_token.info.name
+      new_user.email = access_token.info.email
+      new_user.password = Devise.friendly_token[0, 20]
+    end
+  end
 
   private
 

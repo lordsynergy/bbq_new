@@ -75,6 +75,9 @@ ru:
       password_confirm: 'Подтверждение пароля'
       name: 'Имя'
       email: 'Email'
+      using_account: 'Войти с помощью:'
+      github: 'Профиль GitHub'
+      vkontakte: 'Профиль Vkontakte'
 
     events:
       new_event: 'Создать событие'

@@ -10,4 +10,15 @@
     <%= link_to t('.forgot_your_password'), new_password_path(resource_name) %><br />
   <% end %>
 
+  <%- if devise_mapping.omniauthable? %>
+    <p class="mt-3"><%= t('views.devise.using_account')%></p>
+    <div class="d-flex mb-3">
+      <%= button_to fa_icon('text-dark bi bi-github'), user_github_omniauth_authorize_path,
+                    method: :post, data: { turbo: false }, title: t('views.devise.github'),
+                    class: 'btn img-icon-small btn-outline-secondary ms-1' %>
+      <%= button_to fa_icon('text-primary fa-vk'), user_vkontakte_omniauth_authorize_path,
+                    method: :post, data: { turbo: false }, title:  t('views.devise.vkontakte'),
+                    class: 'btn img-icon-small btn-outline-secondary' %>
+    </div>
+<% end %>
 </div>
