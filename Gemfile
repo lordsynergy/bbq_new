@@ -11,6 +11,7 @@ gem "mailjet"
 gem "rmagick"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 gem "rails-i18n"
+gem "resque"
 gem "devise"
 gem "devise-i18n"
 gem "sprockets-rails"
@@ -48,6 +49,7 @@ group :development do
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.2'
   gem 'capistrano-bundler', '~> 2.1'
+  gem 'capistrano-resque', require: false
   gem 'web-console'
 end
 

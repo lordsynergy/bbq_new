@@ -46,14 +46,10 @@ class EventsController < ApplicationController
   def update
     authorize event
 
-    respond_to do |format|
-      if event.update(event_params)
-        format.html { redirect_to event_url(event), notice: I18n.t('controllers.events.updated') }
-        format.json { render :show, status: :ok, location: event }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: event.errors, status: :unprocessable_entity }
-      end
+    if event.update(event_params)
+      format.html { redirect_to event_url(event), notice: I18n.t('controllers.events.updated') }
+    else
+      format.html { render :edit, status: :unprocessable_entity }
     end
   end
 
@@ -62,10 +58,7 @@ class EventsController < ApplicationController
 
     event.destroy
 
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: I18n.t('controllers.events.destroyed') }
-      format.json { head :no_content }
-    end
+    redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
   end
 
   private
