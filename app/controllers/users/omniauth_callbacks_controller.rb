@@ -4,7 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def vkontakte
-    service_provider('Vkontakte')
+    oauth_service('Vkontakte')
   end
 
   private
