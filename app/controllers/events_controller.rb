@@ -47,9 +47,9 @@ class EventsController < ApplicationController
     authorize event
 
     if event.update(event_params)
-      format.html { redirect_to event_url(event), notice: I18n.t('controllers.events.updated') }
+      redirect_to event_url(event), notice: I18n.t('controllers.events.updated')
     else
-      format.html { render :edit, status: :unprocessable_entity }
+      render :edit, status: :unprocessable_entity
     end
   end
 

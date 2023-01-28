@@ -6,7 +6,6 @@ ruby "3.0.0"
 gem "aws-sdk-s3", require: false
 gem "carrierwave"
 gem "dotenv-rails"
-gem "font-awesome-rails"
 gem "file_validators"
 gem "mailjet"
 gem "rmagick"

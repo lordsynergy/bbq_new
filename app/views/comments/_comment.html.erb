@@ -12,7 +12,7 @@
   </p>
   <p class="d-inline">
     <% if policy(comment).destroy? %>
-      <%= button_to fa_icon('trash'), event_comment_path(comment.event, comment),
+      <%= button_to fa_icon('trash-fill'), event_comment_path(comment.event, comment),
                     form: {data: {turbo_confirm: t('views.comments.destroy_confirm')}},
                     method: :delete, class: 'btn', form_class: 'd-inline float-end'
       %>
