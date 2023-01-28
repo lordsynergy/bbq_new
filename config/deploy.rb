@@ -5,7 +5,7 @@ set :application, 'bbq_new'
 set :repo_url, 'git@github.com:lordsynergy/bbq_new.git'
 set :branch, 'main'
 
-set :keep_releases, 1
+set :keep_releases, 2
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
