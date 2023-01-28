@@ -15,13 +15,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def oauth_service(provider)
     if @user.persisted?
-      set_flash_message(:notice, :success, kind: provider)
-
+      flash[:notice] = t('devise.omniauth_callbacks.success', kind: provider)
+      sign_in_and_redirect user, event: :authentication
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
 
-     redirect_to root_path
+      redirect_to root_path
     end
   end
 
+  def user
+    @user = User.find_service_oauth(request.env['omniauth.auth'])
+  end
 end
