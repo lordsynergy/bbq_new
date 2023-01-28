@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
     return user if user.present?
 
-    User.where(provider: access_token.provider, uid: access_token.uid).first_or_create! do |new_user|
+    User.where(provider: access_token.provider, url: access_token.url).first_or_create! do |new_user|
       new_user.name = access_token.info.name
       new_user.email = access_token.info.email
       new_user.password = Devise.friendly_token[0, 20]

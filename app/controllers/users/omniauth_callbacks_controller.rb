@@ -14,7 +14,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def oauth_service(provider)
-    if @user.persisted?
+    if user.persisted?
       flash[:notice] = t('devise.omniauth_callbacks.success', kind: provider)
       sign_in_and_redirect user, event: :authentication
     else
