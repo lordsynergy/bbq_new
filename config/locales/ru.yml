@@ -78,6 +78,7 @@ ru:
       using_account: 'Войти с помощью:'
       github: 'Профиль GitHub'
       vkontakte: 'Профиль Vkontakte'
+      yandex: 'Профиль Яндекс'
 
     events:
       new_event: 'Создать событие'
