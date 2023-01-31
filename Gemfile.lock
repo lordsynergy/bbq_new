@@ -420,6 +420,7 @@ DEPENDENCIES
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-i18n
   resque
+  resque-scheduler
   rmagick
   rspec-rails
   sprockets-rails

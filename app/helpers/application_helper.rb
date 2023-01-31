@@ -3,6 +3,10 @@ module ApplicationHelper
     content_tag 'span', '', class: "bi bi-#{icon_class}"
   end
 
+  def fa_icon_provider(icon_class)
+    content_tag 'i', '', class: icon_class
+  end
+
   def user_avatar(user)
     if user.avatar.attached? && user.avatar.variable?
       user.avatar.variant(:thumb_big)
