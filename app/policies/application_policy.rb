@@ -40,4 +40,19 @@ class ApplicationPolicy
   def current_user_can_edit?
     user.present? && (record.user == user || (record.try(:event).present? && record.event.user == user))
   end
+
+  class Scope
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      raise NotImplementedError, "You must define #resolve in #{self.class}"
+    end
+
+    private
+
+    attr_reader :user, :scope
+  end
 end

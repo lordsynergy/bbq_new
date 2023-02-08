@@ -19,6 +19,12 @@ class EventPolicy < ApplicationPolicy
     current_user_can_edit?
   end
 
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
+
   private
 
   def password_guard!

@@ -1,5 +1,5 @@
 class CommentPolicy < ApplicationPolicy
   def create?
-    true
+    user.present?
   end
 end

@@ -47,9 +47,11 @@
           <% end %>
         </div>
 
-        <div class="p-2 event-comments buffer-top">
-          <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
-        </div>
+        <% if policy(Comment).create? %>
+          <div class="p-2 event-comments buffer-top">
+            <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+          </div>
+        <% end %>
         <div class="p-2 buffer-both">
           <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
         </div>

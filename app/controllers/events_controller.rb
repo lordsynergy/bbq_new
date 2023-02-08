@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   def index
     authorize Event
 
-    @events = Event.all
+    @events = policy_scope(Event).all
   end
 
   def show
