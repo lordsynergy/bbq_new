@@ -287,7 +287,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :github, ENV['OAUTH_GITHUB_ID'], ENV['OAUTH_GITHUB_SECRET'], scope: 'user,public_repo'
+  config.omniauth :github, ENV['OAUTH_GITHUB_ID'], ENV['OAUTH_GITHUB_SECRET'], scope: 'user:email'
   config.omniauth :vkontakte, ENV['OAUTH_VK_ID'], ENV['OAUTH_VK_SECRET'], { scope: 'email' }
   config.omniauth :yandex, ENV['OAUTH_YANDEX_ID'], ENV['OAUTH_YANDEX_SECRET']
 

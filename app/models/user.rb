@@ -1,3 +1,4 @@
+require 'open-uri'
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[github vkontakte yandex]
@@ -27,6 +28,7 @@ class User < ApplicationRecord
       new_user.name = access_token.info.name
       new_user.email = access_token.info.email
       new_user.password = Devise.friendly_token[0, 20]
+      new_user.avatar.attach(io: URI.open(access_token.info.image), filename: 'avatar')
     end
   end
 
