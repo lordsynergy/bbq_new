@@ -19,9 +19,6 @@
       <%= button_to fa_icon_provider('fab fa-vk fa-3x'), user_vkontakte_omniauth_authorize_path,
                     method: :post, data: { turbo: false }, title:  t('views.devise.vkontakte'),
                     class: 'btn btn-outline-secondary ms-2' %>
-      <%= button_to fa_icon_provider('text-danger fab fa-yandex fa-3x'), user_yandex_omniauth_authorize_path,
-                    method: :post, data: { turbo: false }, title: t('views.devise.yandex'),
-                    class: 'btn btn-outline-secondary ms-2' %>
     </div>
   <% end %>
 </div>

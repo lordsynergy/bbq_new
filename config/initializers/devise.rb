@@ -289,7 +289,6 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :github, ENV['OAUTH_GITHUB_ID'], ENV['OAUTH_GITHUB_SECRET'], scope: 'user:email'
   config.omniauth :vkontakte, ENV['OAUTH_VK_ID'], ENV['OAUTH_VK_SECRET'], { scope: 'email' }
-  config.omniauth :yandex, ENV['OAUTH_YANDEX_ID'], ENV['OAUTH_YANDEX_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
