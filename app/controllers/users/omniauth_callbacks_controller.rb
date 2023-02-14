@@ -5,6 +5,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def vkontakte
     oauth_service('Vkontakte')
+    end
+
+  def yandex
+    oauth_service('Yandex')
   end
 
   private
