@@ -20,21 +20,19 @@ class User < ApplicationRecord
   after_commit :link_subscriptions, on: :create
 
   def self.find_service_oauth(auth)
-    user = where(provider: auth.provider, id: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
+    where(provider: auth.provider, id: auth.uid).first_or_create do |user|
+      user.email = auth.info.email || "user_#{SecureRandom.hex(4)}@example.com"
       user.name = auth.info.name
       user.password = Devise.friendly_token[0, 20]
       user.url = auth.info.url
-    end
 
-    if auth.provider == 'yandex'
-      url = "https://avatars.yandex.net/get-yapic/#{auth.extra.raw_info.default_avatar_id}/islands-200"
-      user.avatar.attach(io: URI.open(url), filename: 'avatar')
-    else
-      user.avatar.attach(io: URI.open(auth.info.image), filename: 'avatar')
+      if auth.provider == 'yandex'
+        url = "https://avatars.yandex.net/get-yapic/#{auth.extra.raw_info.default_avatar_id}/islands-200"
+        user.avatar.attach(io: URI.open(url), filename: 'avatar')
+      else
+        user.avatar.attach(io: URI.open(auth.info.image), filename: 'avatar') if auth.info.image.present?
+      end
     end
-
-    user
   end
 
   private
