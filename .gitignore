@@ -44,3 +44,4 @@ public/uploads
 storage/*
 .env
 .idea
+/config/cable.yml

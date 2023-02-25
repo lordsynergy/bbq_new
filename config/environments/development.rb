@@ -71,5 +71,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.active_job.queue_adapter = :resque
-  config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
+  config.active_job.queue_name_prefix = "bbq_new_#{Rails.env}"
 end
