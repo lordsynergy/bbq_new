@@ -1,24 +1,47 @@
-# README
+## BBQ
+Приложение для планирования событий и мероприятий. Зарегистрированные пользователи могут создавать новые мероприятия,
+на которые могут подписываться другие пользователи, а так же оставлять комментарии и фотографии к мероприятию.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Рабочее приложение ```BBQ``` находится по адресу: https://event.goodprogramming.ru/
 
-Things you may want to cover:
+Версии Ruby и Rails:
+```
+ruby >= 3.0.0
+rails ~> 7.0.1
+```
 
-* Ruby version
+При создании приложения использовались технологии:
+* для регистрации пользователей гем ```devise```
+* аутентификация с помощью сервисов: ```VKontakte``` ```Github``` ```Yandex```
+* для отправки почтовых уведомлений: ```ActionMailer``` ```ActiveJob``` ```MailJet```
+* для дизайна - ```Bootstrap 5```
+* для хранения изображений ```Yandex Cloud Storage```
+* авторизация с помощью ```pundit```
+* для определения местоположения - ```Yandex Map```
+* деплой на VPS с помощью ```capistrano```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Запуск и использование
+Установите ```Bundler```:
+```
+gem install bundler
+```
+Сделайте клон репозитория:
+```
+git clone https://github.com/lordsynergy/bbq_new
+```
+Находясь в папке проекта установите зависимости:
+```
+bundle install
+```
+Выполните миграции базы данных:
+```
+bundle exec rails db:migrate
+```
+Запустите сервер приложения:
+```
+bundle exec rails s
+```
+В браузере откройте:
+```
+http://localhost:3000
+```
