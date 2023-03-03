@@ -1,5 +1,9 @@
 class CommentPolicy < ApplicationPolicy
   def create?
-    user.present?
+    if user.present?
+      user
+    else
+      'Anonymous'
+    end
   end
 end
